@@ -12,7 +12,7 @@ const intro = {
     transition: {
       duration: 0.5,
       staggerChildren: 0.25,
-      delayChildren: 0.5
+      delayChildren: 0.5,
     },
   },
 };
@@ -26,11 +26,26 @@ const introChildren = {
     opacity: 1,
     y: 0,
     transition: {
-        duration: 1,
-        type: "spring",
-        bounce: 0.5
+      duration: 1,
+      type: "spring",
+      bounce: 0.5,
+    },
+  },
+};
 
-    }
+const laptop = {
+  initial: { y: 0 },
+  animate: {
+    rotate: "35deg",
+    y: 20,
+    transition: {
+      y: {
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
   },
 };
 
@@ -61,13 +76,18 @@ const HeroSection = () => {
           <Button>Book a service</Button>
         </motion.div>
       </motion.div>
-      <div className="mt-10 w-4/5 lg:w-full mx-auto">
+      <motion.div
+        variants={laptop}
+        initial="initial"
+        animate="animate"
+        className="mt-10 w-4/5 lg:w-full mx-auto"
+      >
         <img
-          className="-rotate-[35deg] h-[95%] object-contain"
+          className="h-[95%] object-contain"
           src={macbook}
           alt="macbook exposed"
         />
-      </div>
+      </motion.div>
     </Container>
   );
 };
