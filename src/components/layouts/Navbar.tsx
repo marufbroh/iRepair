@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { Button } from "../ui/button";
+import {motion} from "framer-motion";
 
 const Navbar = () => {
   return (
-    <header className="h-16">
+    <motion.header className="h-16"
+    
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    >
       <nav className="flex justify-between items-center h-full w-full max-w-[1230px] mx-auto px-5">
         <span className="text-3xl">iRepair</span>
         <ul className="flex gap-5 items-center">
@@ -20,7 +25,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-    </header>
+    </motion.header>
   );
 };
 
