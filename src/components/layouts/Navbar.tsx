@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
-    <header className="bg-gray-200 h-16">
+    <header className="h-16">
       <nav className="flex justify-between items-center h-full w-full max-w-[1220px] mx-auto px-5">
         <span className="text-3xl">iRepair</span>
         <ul className="flex gap-5 items-center">
